@@ -45,6 +45,25 @@
         </dependency>
       </dependencies>
     </profile>
+<profile>
+    <id>dev</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+        <spring.profiles.active>dev</spring.profiles.active>
+        <log4j.level>DEBUG</log4j.level>
+    </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/config/dev</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+</profile>
+
   </profiles>
 <build>
 <finalName>${api_name}</finalName>
