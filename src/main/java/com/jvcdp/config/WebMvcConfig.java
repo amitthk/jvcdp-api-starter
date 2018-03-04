@@ -1,4 +1,4 @@
-package com.boot.config;
+package com.jvcdp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

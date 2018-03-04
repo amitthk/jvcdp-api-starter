@@ -1,4 +1,4 @@
-package com.boot;
+package com.jvcdp;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -10,9 +10,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
-import com.boot.controller.BlogpostController;
-import com.boot.model.Blogpost;
-import com.boot.repository.BlogpostRepository;
+import com.jvcdp.controller.BlogpostController;
+import com.jvcdp.model.Blogpost;
+import com.jvcdp.repository.BlogpostRepository;
 
 public class BlogpostControllerTest {
 	@InjectMocks

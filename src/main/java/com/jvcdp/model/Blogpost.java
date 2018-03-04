@@ -1,33 +1,35 @@
-package com.boot.model;
+package com.jvcdp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
+@Table(name = "BLOGPOST")
 public class Blogpost {
 
 
-	public Blogpost(Long id, String name, String subDepartment, String comments,
-			String description, Integer lastUpdated) {
+	public Blogpost(Long id, String name, String category, String comments,
+			String description, Date lastUpdated) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.subDepartment = subDepartment;
+		this.category = category;
 		this.comments = comments;
 		this.description = description;
 		this.lastUpdated = lastUpdated;
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	Long id;
 	String name;
-	String subDepartment;
+	String category;
 	String comments;
 	String description;
-	Integer lastUpdated;
+
+	@Column(name ="LAST_UPDATED")
+	Date lastUpdated;
 
 	public Blogpost() { }
 
@@ -49,12 +51,12 @@ public class Blogpost {
 		this.name = name;
 	}
 
-	public String getSubDepartment() {
-		return subDepartment;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setSubDepartment(String subDepartment) {
-		this.subDepartment = subDepartment;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getComments() {
@@ -73,11 +75,11 @@ public class Blogpost {
 		this.description = description;
 	}
 
-	public Integer getLastUpdated() {
+	public Date getLastUpdated() {
 		return lastUpdated;
 	}
 
-	public void setLastUpdated(Integer lastUpdated) {
+	public void setLastUpdated(Date lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
 }

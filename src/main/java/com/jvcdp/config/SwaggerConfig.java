@@ -1,4 +1,4 @@
-package com.boot.config;
+package com.jvcdp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +21,8 @@ public class SwaggerConfig {
 	    return new Docket(DocumentationType.SWAGGER_2)          
 	      .select()
 	      .apis(Predicates
-	    		  .or(RequestHandlerSelectors.basePackage("com.boot.controller"),
-	    			RequestHandlerSelectors.basePackage("com.boot.jvcdp.controller")))
+	    		  .or(RequestHandlerSelectors.basePackage("com.jvcdp.controller"),
+	    			RequestHandlerSelectors.basePackage("com.jvcdp.jvcdp.controller")))
 	      .paths(PathSelectors.any())
 	      .build()
 	      .apiInfo(apiInfo());

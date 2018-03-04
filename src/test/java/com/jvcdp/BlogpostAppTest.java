@@ -1,9 +1,9 @@
-package com.boot;
+package com.jvcdp;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import com.boot.controller.HomeController;
+import com.jvcdp.controller.HomeController;
 
 public class BlogpostAppTest {
 

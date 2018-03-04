@@ -1,4 +1,4 @@
-package com.boot.controller;
+package com.jvcdp.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boot.model.Blogpost;
-import com.boot.repository.BlogpostRepository;
+import com.jvcdp.model.Blogpost;
+import com.jvcdp.repository.BlogpostRepository;
 
 @RestController
 @RequestMapping("blogposts")
@@ -26,6 +26,11 @@ public class BlogpostController {
 	@GetMapping(value = "")
 	public List<Blogpost> list() {
 		return blogpostRepository.findAll();
+	}
+
+	@GetMapping(value = "/category/{category}")
+	public List<Blogpost> blogpostsByCategory(@PathVariable String category) {
+		return blogpostRepository.getBlogpostsByCategory(category);
 	}
 
 	@PostMapping(value = "")
