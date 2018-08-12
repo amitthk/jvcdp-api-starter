@@ -2,6 +2,8 @@ package com.jvcdp.controller;
 
 import java.util.List;
 
+import com.google.common.collect.Lists;
+import com.jvcdp.repository.BlogpostRedisTemplateRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,46 +16,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jvcdp.model.Blogpost;
-import com.jvcdp.repository.BlogpostRepository;
 
 @RestController
 @RequestMapping("blogposts")
 public class BlogpostController {
-	
+    
 	@Autowired
-	private BlogpostRepository blogpostRepository;
+	private BlogpostRedisTemplateRepository blogpostRedisTemplateRepository;
 
 	@GetMapping(value = "")
 	public List<Blogpost> list() {
-		return blogpostRepository.findAll();
+		return Lists.newArrayList(blogpostRedisTemplateRepository.findAll());
 	}
 
 	@GetMapping(value = "/category/{category}")
 	public List<Blogpost> blogpostsByCategory(@PathVariable String category) {
-		return blogpostRepository.getBlogpostsByCategory(category);
+		return blogpostRedisTemplateRepository.getBlogpostsByCategory(category);
 	}
 
 	@PostMapping(value = "")
 	public Blogpost create(@RequestBody Blogpost blogpost) {
-		return blogpostRepository.saveAndFlush(blogpost);
+		blogpostRedisTemplateRepository.save(blogpost);
+		return  blogpost;
 	}
 
 	@GetMapping(value = "/{id}")
-	public Blogpost get(@PathVariable Long id) {
-		return blogpostRepository.findOne(id);
+	public Blogpost get(@PathVariable String id) {
+		return blogpostRedisTemplateRepository.find(id);
 	}
 
 	@PutMapping(value = "/{id}")
-	public Blogpost update(@PathVariable Long id, @RequestBody Blogpost blogpost) {
-		Blogpost existingBlogpost = blogpostRepository.findOne(id);
+	public Blogpost update(@PathVariable String id, @RequestBody Blogpost blogpost) {
+		Blogpost existingBlogpost = blogpostRedisTemplateRepository.find(id);
 		BeanUtils.copyProperties(blogpost, existingBlogpost);
-		return blogpostRepository.saveAndFlush(existingBlogpost);
+		blogpostRedisTemplateRepository.save(existingBlogpost);
+		return blogpost;
 	}
 
 	@DeleteMapping(value = "/{id}")
-	public Blogpost delete(@PathVariable Long id) {
-		Blogpost existingBlogpost = blogpostRepository.findOne(id);
-		blogpostRepository.delete(existingBlogpost);
+	public Blogpost delete(@PathVariable String id) {
+		Blogpost existingBlogpost = blogpostRedisTemplateRepository.find(id);
+		blogpostRedisTemplateRepository.delete(existingBlogpost.getId());
 		return existingBlogpost;
 	}
 	

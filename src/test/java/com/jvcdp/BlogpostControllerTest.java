@@ -3,6 +3,7 @@ package com.jvcdp;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+import com.jvcdp.repository.BlogpostRedisTemplateRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -12,14 +13,13 @@ import static org.mockito.Mockito.*;
 
 import com.jvcdp.controller.BlogpostController;
 import com.jvcdp.model.Blogpost;
-import com.jvcdp.repository.BlogpostRepository;
 
 public class BlogpostControllerTest {
 	@InjectMocks
 	private BlogpostController sc;
 
 	@Mock
-	private BlogpostRepository blogpostRepository;
+	private BlogpostRedisTemplateRepository blogpostRepository;
 
     @Before
     public void init() {
@@ -29,15 +29,16 @@ public class BlogpostControllerTest {
 	@Test
 	public void testBlogpostGet() {
     	Blogpost sw = new Blogpost();
-    	sw.setId(1l);
-		when(blogpostRepository.findOne(1l)).thenReturn(sw);
+    	String id = java.util.UUID.randomUUID().toString();
+    	sw.setId(id);
+		when(blogpostRepository.find(id)).thenReturn(sw);
 
-		Blogpost wreck = sc.get(1L);
+		Blogpost wreck = sc.get(id);
 
-		verify(blogpostRepository).findOne(1l);		
+		verify(blogpostRepository).find(id);
 
 //		assertEquals(1l, wreck.getId().longValue());	
-		assertThat(wreck.getId(), is(1l));
+		assertThat(wreck.getId(), is(id));
 	}
 
 }
