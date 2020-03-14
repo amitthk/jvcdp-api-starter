@@ -3,14 +3,20 @@ package com.jvcdp.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("home")
+@RequestMapping("/")
 public class HomeController {
-	
-	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String home() {
-		return "Blogposts API, home page!";
+
+	@RequestMapping(method = RequestMethod.GET)
+	ModelAndView
+	index()
+	{
+		ModelAndView mav = new ModelAndView("index");
+		mav.addObject("version", "0.1");
+		return mav;
 	}
+
 
 }
