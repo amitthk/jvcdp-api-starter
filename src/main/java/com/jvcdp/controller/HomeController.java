@@ -10,8 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	ModelAndView
-	index()
+	public ModelAndView index()
 	{
 		ModelAndView mav = new ModelAndView("index");
 		mav.addObject("version", "0.1");

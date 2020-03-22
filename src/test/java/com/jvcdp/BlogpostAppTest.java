@@ -10,7 +10,7 @@ public class BlogpostAppTest {
 	@Test
     public void testApp() {
 		HomeController hc = new HomeController();
-		String result = hc.home();
-        assertEquals( result, "Blog Post App, home page!" );
+		String result = hc.index().getModel().get("version").toString();
+        assertEquals( result, "0.1" );
 	}
 }
