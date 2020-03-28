@@ -2,6 +2,10 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 import BlogPostsService from '../component/BlogPostsApiService.jsx'
 class BlogPostListComponent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {blogposts: []};
+	}
 
     render() {
         return (
