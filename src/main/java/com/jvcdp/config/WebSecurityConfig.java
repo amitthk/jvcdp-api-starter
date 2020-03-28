@@ -15,9 +15,11 @@ import java.util.Arrays;
 class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] AUTH_WHITELIST = {
-			"/webjars/**", 
-			"/*.html", 
-			"/favicon.ico", 
+            "/webjars/**",
+            "/*.js",
+            "/*.html",
+            "/*.css",
+			"/favicon.ico",
 			"/**/*.css", 
 			"/**/*.js",
 			"/v2/api-docs/**", 
