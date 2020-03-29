@@ -5,6 +5,7 @@ class BlogPostListComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {blogposts: []};
+		this.state.blogposts.push({'id': '0', 'description': 'dummy'})
 	}
 
     render() {
@@ -24,8 +25,8 @@ class BlogPostListComponent extends React.Component {
                             this.state.blogposts.map(
                         itm =>
                                     <tr key={itm.id}>
+                                    <td>{itm.id}</td>
                                         <td>{itm.description}</td>
-
                             </tr>)
                             }
                         </tbody>
@@ -40,9 +41,9 @@ class BlogPostListComponent extends React.Component {
     }
 
     loadBlogPostList(){
-            ApiService.fetchBlogPosts()
+            BlogPostsService.fetchBlogPosts()
                 .then((res) => {
-                    this.setState({blogposts: res.data.result})
+                    this.setState({blogposts: res.data})
                 });}
 }
 

@@ -13,5 +13,19 @@ class BlogPostApp extends React.Component {
                               </>
                           )
                       }
-                  }
+
+
+//                   componentDidMount(){
+//                   alert('inside componentDidMount')
+//                   this.loadBlogPostList();
+//                   }
+//
+//                       loadBlogPostList(){
+//                       alert('loac')
+//                               BlogPostsService.fetchBlogPosts()
+//                                   .then((res) => {
+//                                       this.setState({blogposts: res.text})
+//                                   });}
+}
+
 export default BlogPostApp

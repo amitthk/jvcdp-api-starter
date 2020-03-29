@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/blogposts';
+const API_BASE_URL = 'http://localhost:8097/blogposts';
 
 class BlogPostsApiService {
 
