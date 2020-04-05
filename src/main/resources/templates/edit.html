@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Add AppComponent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <link rel="stylesheet" href="/all.css" />
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Add AppComponent</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/createAppComponent}" th:object="${appcomponent}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="availabilityDev" class="col-form-label">AvailabilityDev</label>
+                            <input type="text" th:field="*{availabilityDev}" class="form-control"
+                                   id="availabilityDev" placeholder="AvailabilityDev" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="availabilitySit" class="col-form-label">AvailabilitySit</label>
+                            <input type="text" th:field="*{availabilitySit}" class="form-control"
+                                   id="availabilitySit" placeholder="AvailabilitySit" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="availabilityUat" class="col-form-label">AvailabilityUat</label>
+                            <input type="text" th:field="*{availabilityUat}" class="form-control"
+                                   id="availabilityUat" placeholder="AvailabilityUat" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="availabilityQa" class="col-form-label">AvailabilityQa</label>
+                            <input type="text" th:field="*{availabilityQa}" class="form-control"
+                                   id="availabilityQa" placeholder="AvailabilityQa" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="availabilityProd" class="col-form-label">AvailabilityProd</label>
+                            <input type="text" th:field="*{availabilityProd}" class="form-control"
+                                   id="availabilityProd" placeholder="AvailabilityProd" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="versionControl" class="col-form-label">VersionControl</label>
+                            <input type="text" th:field="*{versionControl}" class="form-control"
+                                   id="versionControl" placeholder="VersionControl" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="infraProvisioningAutomation" class="col-form-label">InfraProvisioningAutomation</label>
+                            <input type="text" th:field="*{infraProvisioningAutomation}" class="form-control"
+                                   id="infraProvisioningAutomation" placeholder="InfraProvisioningAutomation" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="configManagement" class="col-form-label">ConfigManagement</label>
+                            <input type="text" th:field="*{configManagement}" class="form-control"
+                                   id="configManagement" placeholder="ConfigManagement" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="appBuildAutomation" class="col-form-label">AppBuildAutomation</label>
+                            <input type="text" th:field="*{appBuildAutomation}" class="form-control"
+                                   id="appBuildAutomation" placeholder="AppBuildAutomation" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="appSetupAutomation" class="col-form-label">AppSetupAutomation</label>
+                            <input type="text" th:field="*{appSetupAutomation}" class="form-control"
+                                   id="appSetupAutomation" placeholder="AppSetupAutomation" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="unitTesting" class="col-form-label">UnitTesting</label>
+                            <input type="text" th:field="*{unitTesting}" class="form-control"
+                                   id="unitTesting" placeholder="UnitTesting" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="integrationTesting" class="col-form-label">IntegrationTesting</label>
+                            <input type="text" th:field="*{integrationTesting}" class="form-control"
+                                   id="integrationTesting" placeholder="IntegrationTesting" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="regresssionTesting" class="col-form-label">RegresssionTesting</label>
+                            <input type="text" th:field="*{regresssionTesting}" class="form-control"
+                                   id="regresssionTesting" placeholder="RegresssionTesting" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="performanceTesting" class="col-form-label">PerformanceTesting</label>
+                            <input type="text" th:field="*{performanceTesting}" class="form-control"
+                                   id="performanceTesting" placeholder="PerformanceTesting" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="staticCodeAnalysis" class="col-form-label">StaticCodeAnalysis</label>
+                            <input type="text" th:field="*{staticCodeAnalysis}" class="form-control"
+                                   id="staticCodeAnalysis" placeholder="StaticCodeAnalysis" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="vulnerabilityScanning" class="col-form-label">VulnerabilityScanning</label>
+                            <input type="text" th:field="*{vulnerabilityScanning}" class="form-control"
+                                   id="vulnerabilityScanning" placeholder="VulnerabilityScanning" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="releaseManagement" class="col-form-label">ReleaseManagement</label>
+                            <input type="text" th:field="*{releaseManagement}" class="form-control"
+                                   id="releaseManagement" placeholder="ReleaseManagement" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="cicdAutomation" class="col-form-label">CicdAutomation</label>
+                            <input type="text" th:field="*{cicdAutomation}" class="form-control"
+                                   id="cicdAutomation" placeholder="CicdAutomation" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="infraTelemetry" class="col-form-label">InfraTelemetry</label>
+                            <input type="text" th:field="*{infraTelemetry}" class="form-control"
+                                   id="infraTelemetry" placeholder="InfraTelemetry" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="appTelemetry" class="col-form-label">AppTelemetry</label>
+                            <input type="text" th:field="*{appTelemetry}" class="form-control"
+                                   id="appTelemetry" placeholder="AppTelemetry" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="continuousImprovement" class="col-form-label">ContinuousImprovement</label>
+                            <input type="text" th:field="*{continuousImprovement}" class="form-control"
+                                   id="continuousImprovement" placeholder="ContinuousImprovement" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Submit " />
+                        </div>
+
+                        <input type="hidden" id="id" th:field="*{id}" />
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+</div>
+</body>
+
+</html>
