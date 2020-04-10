@@ -11,85 +11,81 @@
 </head>
 
 <body>
-<div class="container my-2">
-    <div class="card">
-        <div class="card-body">
-            <div th:switch="${appcomponents}" class="container my-5">
-                <p class="my-5">
-                    <a href="/edit" class="btn btn-primary">
-                        <i class="fas fa-user-plus ml-2"> Add AppComponent </i></a>
-                </p>
-                <div class="col-md-10">
-                    <h2 th:case="null">No record found !!</h2>
-                    <div th:case="*">
-                        <table class="table table-striped table-responsive-md">
-                            <thead>
-                            <tr>
-                                <th>AvailabilityDev</th>
-                                <th>AvailabilitySit</th>
-                                <th>AvailabilityUat</th>
-                                <th>AvailabilityQa</th>
-                                <th>AvailabilityProd</th>
-                                <th>VersionControl</th>
-                                <th>InfraProvisioningAutomation</th>
-                                <th>ConfigManagement</th>
-                                <th>AppBuildAutomation</th>
-                                <th>AppSetupAutomation</th>
-                                <th>UnitTesting</th>
-                                <th>IntegrationTesting</th>
-                                <th>RegresssionTesting</th>
-                                <th>PerformanceTesting</th>
-                                <th>StaticCodeAnalysis</th>
-                                <th>VulnerabilityScanning</th>
-                                <th>ReleaseManagement</th>
-                                <th>CicdAutomation</th>
-                                <th>InfraTelemetry</th>
-                                <th>AppTelemetry</th>
-                                <th>ContinuousImprovement</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="appcomponent : ${appcomponents}">
-                                <td th:text="${appcomponent.availabilityDev}"></td>
-                                <td th:text="${appcomponent.availabilitySit}"></td>
-                                <td th:text="${appcomponent.availabilityUat}"></td>
-                                <td th:text="${appcomponent.availabilityQa}"></td>
-                                <td th:text="${appcomponent.availabilityProd}"></td>
-                                <td th:text="${appcomponent.versionControl}"></td>
-                                <td th:text="${appcomponent.infraProvisioningAutomation}"></td>
-                                <td th:text="${appcomponent.configManagement}"></td>
-                                <td th:text="${appcomponent.appBuildAutomation}"></td>
-                                <td th:text="${appcomponent.appSetupAutomation}"></td>
-                                <td th:text="${appcomponent.unitTesting}"></td>
-                                <td th:text="${appcomponent.integrationTesting}"></td>
-                                <td th:text="${appcomponent.regresssionTesting}"></td>
-                                <td th:text="${appcomponent.performanceTesting}"></td>
-                                <td th:text="${appcomponent.staticCodeAnalysis}"></td>
-                                <td th:text="${appcomponent.vulnerabilityScanning}"></td>
-                                <td th:text="${appcomponent.releaseManagement}"></td>
-                                <td th:text="${appcomponent.cicdAutomation}"></td>
-                                <td th:text="${appcomponent.infraTelemetry}"></td>
-                                <td th:text="${appcomponent.appTelemetry}"></td>
-                                <td th:text="${appcomponent.continuousImprovement}"></td>
-                                <td>
-                                    <a th:href="@{/edit/{id}(id=${appcomponent.id})}" class="btn btn-primary">
-                                        <i class="fas fa-user-edit ml-2"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a th:href="@{/delete/{id}(id=${appcomponent.id})}" class="btn btn-primary">
-                                        <i class="fas fa-user-times ml-2"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
+<div class="container-fluid">
+    <div th:switch="${appcomponents}" class="container">
+        <p class="my-5">
+            <a href="/edit" class="btn btn-primary">
+                <i class="fas fa-user-plus ml-2"> Add AppComponent </i></a>
+        </p>
+        <div class="col-md-12">
+            <h2 th:case="null">No record found !!</h2>
+            <div th:case="*">
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>AvailabilityDev</th>
+                        <th>AvailabilitySit</th>
+                        <th>AvailabilityUat</th>
+                        <th>AvailabilityQa</th>
+                        <th>AvailabilityProd</th>
+                        <th>VersionControl</th>
+                        <th>InfraProvisioningAutomation</th>
+                        <th>ConfigManagement</th>
+                        <th>AppBuildAutomation</th>
+                        <th>AppSetupAutomation</th>
+                        <th>UnitTesting</th>
+                        <th>IntegrationTesting</th>
+                        <th>RegresssionTesting</th>
+                        <th>PerformanceTesting</th>
+                        <th>StaticCodeAnalysis</th>
+                        <th>VulnerabilityScanning</th>
+                        <th>ReleaseManagement</th>
+                        <th>CicdAutomation</th>
+                        <th>InfraTelemetry</th>
+                        <th>AppTelemetry</th>
+                        <th>ContinuousImprovement</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="appcomponent : ${appcomponents}">
+                        <td th:text="${appcomponent.availabilityDev}"></td>
+                        <td th:text="${appcomponent.availabilitySit}"></td>
+                        <td th:text="${appcomponent.availabilityUat}"></td>
+                        <td th:text="${appcomponent.availabilityQa}"></td>
+                        <td th:text="${appcomponent.availabilityProd}"></td>
+                        <td th:text="${appcomponent.versionControl}"></td>
+                        <td th:text="${appcomponent.infraProvisioningAutomation}"></td>
+                        <td th:text="${appcomponent.configManagement}"></td>
+                        <td th:text="${appcomponent.appBuildAutomation}"></td>
+                        <td th:text="${appcomponent.appSetupAutomation}"></td>
+                        <td th:text="${appcomponent.unitTesting}"></td>
+                        <td th:text="${appcomponent.integrationTesting}"></td>
+                        <td th:text="${appcomponent.regresssionTesting}"></td>
+                        <td th:text="${appcomponent.performanceTesting}"></td>
+                        <td th:text="${appcomponent.staticCodeAnalysis}"></td>
+                        <td th:text="${appcomponent.vulnerabilityScanning}"></td>
+                        <td th:text="${appcomponent.releaseManagement}"></td>
+                        <td th:text="${appcomponent.cicdAutomation}"></td>
+                        <td th:text="${appcomponent.infraTelemetry}"></td>
+                        <td th:text="${appcomponent.appTelemetry}"></td>
+                        <td th:text="${appcomponent.continuousImprovement}"></td>
+                        <td>
+                            <a th:href="@{/edit/{id}(id=${appcomponent.id})}" class="btn btn-primary">
+                                <i class="fas fa-user-edit ml-2"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{/delete/{id}(id=${appcomponent.id})}" class="btn btn-primary">
+                                <i class="fas fa-user-times ml-2"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
         </div>
     </div>
 </div>
